@@ -1,4 +1,8 @@
-# A company's network
+# Networks and Systems Management
+
+The [labs](./labs/) folder concerns practical classes and involves setting up load-balanced web servers, DHCP servers, monitoring systems like [Nagios](https://www.nagios.org/), proxies, routes, and all the necessary procedures to deal with the management of virtual networks. The [proj](./proj/) folder contains the developed project, as detailed next. 
+
+## A company's network
 
 This project is a system for automatic deployment and testing of a company's
 network. This company has 2 geographic locations: Porto, and Lisboa.
@@ -9,7 +13,7 @@ developers work there as well.
 The company's network managers, who are responsible for managing/administrating
 the network and services of the company, work in Porto.
 
-## Docker containers
+### Docker containers
 
 The [docker directory](./docker) contains the custom docker containers used by
 the different services and clients on both networks.
@@ -17,7 +21,7 @@ the different services and clients on both networks.
 For the purposes of this project, human clients are also represented by docker
 containers. This is done for testing purposes.
 
-## Machines
+### Machines
 
 The configuration machine is the one that deploys files to the Porto and Lisboa
 machines. Its files reside in the [config_machine directory](./config_machine).
@@ -53,11 +57,10 @@ the deploy script inside the respective machine directory, for example
 [Lisboa's deploy script](./lisboa_machine/deploy.sh).
 
 These scripts should be run through SSH, for example:
-`ssh vmb bash <./lisboa_machine/deploy.sh`
+`ssh vmb bash < ./lisboa_machine/deploy.sh`
 
-## Authors
-
-- [Ana Barros](https://github.com/anaines14) - `up201806593@fe.up.pt`
-- [João Costa](https://github.com/JoaoCostaIFG) - `up201806560@fe.up.pt`
-- [João Martins](https://github.com/joaolucasmartins) - `up201806436@fe.up.pt`
-- [Rui Pinto](https://github.com/2dukes) - `up201806441@fe.up.pt`
+* Collaborators
+    - Ana Barros up201806593@fe.up.pt
+    - João Costa up201806560@fe.up.pt
+    - João Martins up201806436@fe.up.pt
+    - Rui Pinto up201806441@fe.up.pt
