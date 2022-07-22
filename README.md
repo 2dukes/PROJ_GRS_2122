@@ -1,6 +1,6 @@
 # Networks and Systems Management
 
-The [labs](./labs/) folder concerns practical classes and involves setting up load-balanced web servers, DHCP servers, monitoring systems like [Nagios](https://www.nagios.org/), proxies, routes, and all the necessary procedures to deal with the management of virtual networks. The [proj](./proj/) folder contains the developed project, as detailed next. 
+The [labs](labs/) folder concerns practical classes and involves setting up load-balanced web servers, DHCP servers, monitoring systems like [Nagios](https://www.nagios.org/), proxies, firewalls, VPNs, DMZs, split-DNS, and routers. Along with that, all the necessary procedures to deal with the management of virtual networks were also explored. The [proj](proj/) folder contains the developed project, as detailed next. 
 
 ## A company's network
 
@@ -15,7 +15,7 @@ the network and services of the company, work in Porto.
 
 ### Docker containers
 
-The [docker directory](./docker) contains the custom docker containers used by
+The [docker directory](proj/docker) contains the custom docker containers used by
 the different services and clients on both networks.
 
 For the purposes of this project, human clients are also represented by docker
@@ -24,13 +24,13 @@ containers. This is done for testing purposes.
 ### Machines
 
 The configuration machine is the one that deploys files to the Porto and Lisboa
-machines. Its files reside in the [config_machine directory](./config_machine).
+machines. Its files reside in the [config_machine directory](proj/config_machine).
 
-The [lisboa_machine directory](./lisboa_machine) contains the network
+The [lisboa_machine directory](proj/lisboa_machine) contains the network
 source-of-truth (**nsot**), the services' configuration, and the tests specific
 for the Lisboa part of the network.
 
-The [porto_machine directory](./porto_machine) contains the network
+The [porto_machine directory](proj/porto_machine) contains the network
 source-of-truth (**nsot**), the services' configuration, and the tests specific
 for the Porto part of the network.
 
@@ -39,22 +39,22 @@ for the Porto part of the network.
 ### Setup
 
 The **setup phase** is the initial part of the pipeline. This phase can be run
-with the [setup script](./setup.sh). This script takes 3 arguments:
+with the [setup script](proj/setup.sh). This script takes 3 arguments:
 
 - The network name (e.g.: porto or lisboa);
 - The target machine ssh identifier (e.g.: vmb or vmc);
 - A colon (`:`) separated list (like UNIX's `PATH` variable) of docker container
   names.
 
-There are 2 scripts, [setup-lisboa.sh](./setup-lisboa.sh) and
-[setup-porto.sh](./setup-porto.sh), that wrap the [setup script](./setup.sh) and
+There are 2 scripts, [setup-lisboa.sh](proj/setup-lisboa.sh) and
+[setup-porto.sh](proj/setup-porto.sh), that wrap the [setup script](proj/setup.sh) and
 pass the needed arguments for the current setup.
 
 ### Deployment and testing
 
 The 2 last phases of the pipeline, deployment and testing, are run by executing
 the deploy script inside the respective machine directory, for example
-[Lisboa's deploy script](./lisboa_machine/deploy.sh).
+[Lisboa's deploy script](proj/lisboa_machine/deploy.sh).
 
 These scripts should be run through SSH, for example:
 `ssh vmb bash < ./lisboa_machine/deploy.sh`
